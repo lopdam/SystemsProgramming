@@ -1,0 +1,2 @@
+
+#define MAXSTR 50
