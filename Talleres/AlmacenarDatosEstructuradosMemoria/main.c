@@ -14,13 +14,13 @@ int main(){
     Usuario_t u;
 
     printf("Ingrese Nombre: ");
-    scanf("%s",&u.nombre);
+    scanf("%s",u.nombre);
 
     printf("\nIngrese Apellido: ");
-    scanf("%s",&u.apellido);
+    scanf("%s",u.apellido);
 
     printf("\nIngrese Contrasenia: ");
-    scanf("%s",&u.password);
+    scanf("%s",u.password);
 
     return validar(&u);
 }
