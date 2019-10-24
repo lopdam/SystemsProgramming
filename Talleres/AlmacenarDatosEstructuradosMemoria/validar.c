@@ -22,7 +22,7 @@ int validar(Usuario_t *u)
   u->userid = rand();
 
   //minuscula Nombre
-  for (int i = 0; i <= strlen(u->nombre); i++)
+  for (int i = 1; i <= strlen(u->nombre); i++)
   {
     u->nombre[i] = tolower(u->nombre[i]);
   }
