@@ -5,8 +5,8 @@
 Nombre 
 Apellido
 username (generado)
-password (generado)
-userid
+password 
+userid  (generado)
 */
 
 int main(){
@@ -22,6 +22,6 @@ int main(){
     printf("\nIngrese Contrasenia: ");
     scanf("%s",&u.password);
 
-    return 0;
+    return validar(&u);
 }
 
