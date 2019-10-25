@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
+#include<time.h>
 #include <stdlib.h>
 
 /* Validar
@@ -19,6 +20,7 @@ int validar(Usuario_t *u)
   u->nombre[0] = toupper(u->nombre[0]);
   u->apellido[0] = toupper(u->apellido[0]);
   //id
+  srand(time(NULL));
   u->userid = rand();
 
   //minuscula Nombre
