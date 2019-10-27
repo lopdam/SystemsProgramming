@@ -43,7 +43,6 @@ int validar(Usuario_t *u)
 
   if (strlen(u->password) < 10)
   {
-    printf("Password no size\n");
     return 3;
   }
 
@@ -64,12 +63,10 @@ int validar(Usuario_t *u)
 
   if (letras)
   {
-    printf("Letra no in password\n");
     return 4;
   }
   if (number)
   {
-    printf("Numer no in password\n");
     return 5;
   }
 
