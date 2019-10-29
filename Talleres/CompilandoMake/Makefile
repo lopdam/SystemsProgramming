@@ -1,19 +1,22 @@
+cc= gcc
+flag= -Wall
+
 source= main.c validar.c guardar.c
+
 obj= main.o validar.o guardar.o 
 
 bin= CompilandoMake.out
 
-all : $(bin)
-	./$<
-
 $(bin) : $(obj)
-	gcc -Wall -o $@ $?
+	$(cc) $(flag) -o $@ $?
 
 %.o : %.c 
-	gcc -Wall -c $<
+	$(cc) $(flag) -c $<
+
+x : $(bin)
+	./$<
 
 .PHONY : clean
-
 clean : 
 	rm *.o 
 	rm $(bin)
