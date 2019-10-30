@@ -15,7 +15,6 @@ $(bin) : $(obj)
 
 x : $(bin)
 	./$<
-
 .PHONY : clean
 clean : 
 	rm *.o 
