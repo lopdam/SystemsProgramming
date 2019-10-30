@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "validar.h"
+#include "guardar.h"
 
 /*
 Nombre 

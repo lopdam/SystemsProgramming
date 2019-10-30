@@ -77,4 +77,4 @@ int validar(Usuario_t *u)
   printf("IdUser: %d\n", u->userid);
 
   return 0;
-};
+}
