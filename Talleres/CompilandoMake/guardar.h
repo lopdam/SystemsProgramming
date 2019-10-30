@@ -1,5 +1,5 @@
-#include "validar.h"
 
-#define Max_Users 50
+
+#define MaxUsers 50
 
 void guardar(Usuario_t *users); 
