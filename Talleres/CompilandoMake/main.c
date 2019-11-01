@@ -21,7 +21,7 @@ int main()
     {
         printf( "\n   1. Desea agregar un usuario:" );
         printf( "\n   2. Salir." );
-        printf( "\n\n   Introduzca opcicn (1-2): ");
+        printf( "\n\n   Introduzca opcion (1-2): ");
         scanf( "%d", &opcion );
 
         switch ( opcion )
@@ -38,7 +38,7 @@ int main()
 
             printf("\n------------------------------------------------\n");
             val = validar(&u);
-            
+
             break;
 
             case 2:
@@ -66,6 +66,7 @@ int main()
     }
 
     } while ( opcion != 2 );
+    guardar(&u);
 
     
 return val;

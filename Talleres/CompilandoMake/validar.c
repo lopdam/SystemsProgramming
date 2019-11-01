@@ -1,4 +1,5 @@
 #include "validar.h"
+#include "guardar.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
@@ -75,6 +76,6 @@ int validar(Usuario_t *u)
   printf("UserName: %s\n", u->username);
   printf("PassWord: %s\n", u->password);
   printf("IdUser: %d\n", u->userid);
-
+  guardar(&u);
   return 0;
 }
