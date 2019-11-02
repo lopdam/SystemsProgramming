@@ -5,6 +5,9 @@
 
 /* Usuario_t * es el puntero al arreglo de usuarios */
 void guardar(Usuario_t *users){
+<<<<<<< HEAD
+    
+=======
    FILE* puntero;
    puntero = fopen("usuario.txt","w+");
       
@@ -13,4 +16,5 @@ void guardar(Usuario_t *users){
       fclose(puntero);
       return;
 
+>>>>>>> 385949526f47e9df79cc3641488d461d02d017da
 }
