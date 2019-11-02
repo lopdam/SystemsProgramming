@@ -13,20 +13,23 @@ userid  (generado)
 
 int main()
 {
-
-    Usuario_t u;
-    int  opcion,val;
+    Usuario_t us[MaxUsers];
+    int opcion;
+    int numUsuarios=0;
 
     do
     {
-        printf( "\n   1. Desea agregar un usuario:" );
-        printf( "\n   2. Salir." );
-        printf( "\n\n   Introduzca opcion (1-2): ");
-        scanf( "%d", &opcion );
+        int val;
 
-        switch ( opcion )
+        Usuario_t u;
+        printf("\n   1. Desea agregar un usuario:");
+        printf("\n   2. Salir.");
+        printf("\n\n   Introduzca opcion (1-2): ");
+        scanf("%d", &opcion);
+
+        switch (opcion)
         {
-            case 1: 
+        case 1:
             printf("Ingrese Nombre: ");
             scanf("%s", u.nombre);
 
@@ -41,37 +44,40 @@ int main()
 
             break;
 
-            case 2:
-            exit(-1);
-            break;}
+        case 2:
+            //exit(-1);
+            break;
+        }
 
-         /* Fin del anidamiento */
-         switch (val)
-    {
-    case 3:
-        fprintf( stderr,"Password no size\n");
-        break;
-    case 4:
-        fprintf(stderr,"Letra no in password\n");
-        break;
-    case 5:
-        fprintf(stderr,"Number no in password\n");
-        break;
-    case 0:
-        fprintf(stderr,"\nCorrecto\n");
-        break;
-    default:
-        fprintf(stderr,"Ninguna de las Anteriores");
-        break;
-    }
+        /* Fin del anidamiento */
+        switch (val)
+        {
+        case 3:
+            fprintf(stderr, "Password no size\n");
+            break;
+        case 4:
+            fprintf(stderr, "Letra no in password\n");
+            break;
+        case 5:
+            fprintf(stderr, "Number no in password\n");
+            break;
+        case 0:
+            fprintf(stderr, "\nCorrecto\n");
+            us[numUsuarios]=u;
+            ++numUsuarios;
+            break;
+        default:
+            fprintf(stderr, "Ninguna de las Anteriores");
+            break;
+        }
 
-    } while ( opcion != 2 );
-    guardar(&u);
+    } while (opcion != 2);
+          
+      for(int i=0;i<numUsuarios-1;i++){
+      printf("%s  %s  %s  %s  %d\n",us[i].nombre,us[i].apellido,us[i].username,us[i].password,us[i].userid);
+      //users>>;
+} 
+    guardar(us,numUsuarios);
 
-    
-return val;
-    
- 
-    
-   
+    return 0;
 }

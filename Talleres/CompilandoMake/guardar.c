@@ -4,13 +4,15 @@
 
 
 /* Usuario_t * es el puntero al arreglo de usuarios */
-void guardar(Usuario_t *users){
+void guardar(Usuario_t *users,int n){
    FILE* puntero;
    puntero = fopen("usuario.txt","w+");
       
-      fprintf(puntero,"%s  %s  %s  %s  %d",users->nombre,users->apellido,users->username,users->password,users->userid);
- 
+      for(int i=0;i<n-1;i++){
+      fprintf(puntero,"%s  %s  %s  %s  %d\n",users[i].nombre,users[i].apellido,users[i].username,users[i].password,users[i].userid);
+      //users>>;
+}  
+
       fclose(puntero);
-      return;
 
 }
