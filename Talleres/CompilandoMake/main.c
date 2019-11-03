@@ -11,9 +11,7 @@ int main()
 
     do
     {
-        int val;
 
-        Usuario_t u;
         printf("\n------------------------------------------------\n");
         printf("\n   1. Desea agregar un usuario:");
         printf("\n   2. Salir.");
@@ -28,6 +26,8 @@ int main()
 
         if (opcion == '1')
         {
+            Usuario_t u;
+            int val;
             printf("\n------------------------------------------------\n");
             printf("Ingrese Nombre: ");
             scanf("%s", u.nombre);
@@ -38,7 +38,8 @@ int main()
             printf("\nIngrese Contrasenia: ");
             scanf("%s", u.password);
             val = validar(&u);
-            /* Fin del anidamiento */
+            
+            /* Detectar error */
             switch (val)
             {
             case 3:

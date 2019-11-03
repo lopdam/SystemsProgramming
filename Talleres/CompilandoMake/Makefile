@@ -1,7 +1,6 @@
 cc= gcc
 flag= -Wall
 header= guardar.h validar.h
-source= main.c validar.c guardar.c $(header)
 
 obj= main.o guardar.o validar.o 
 
