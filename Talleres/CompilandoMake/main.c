@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <validar.h>
-#include <guardar.h>
+#include "validar.h"
+#include "guardar.h"
 
 void mensaje();
 int main()

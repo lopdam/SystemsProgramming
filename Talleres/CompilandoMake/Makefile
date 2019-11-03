@@ -1,8 +1,8 @@
 cc= gcc
 flag= -Wall
-header= guardar.h validar.h
+header= validar.h guardar.h
 
-obj= main.o guardar.o validar.o 
+obj= validar.o guardar.o main.o
 
 bin= CompilandoMake.out
 
@@ -10,7 +10,7 @@ $(bin) : $(obj)
 	@$(cc) $(flag) -o $@ $?
 
 %.o : %.c $(header)
-	@$(cc) $(flag) -c $< -I.
+	@$(cc) $(flag) -c $<
 
 go : $(bin)
 	@./$<
