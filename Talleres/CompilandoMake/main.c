@@ -1,30 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "validar.h"
-#include "guardar.h"
+#include <validar.h>
+#include <guardar.h>
 
+void mensaje();
 int main()
 {
     Usuario_t us[MaxUsers];
-    char opcion;
+    char opcion[1];
     int numUsuarios = 0;
 
     do
     {
-
-        printf("\n------------------------------------------------\n");
-        printf("\n   1. Desea agregar un usuario:");
-        printf("\n   2. Salir.");
-        printf("\n\n   Introduzca opcion (1-2): ");
-        scanf("%c", &opcion);
+        mensaje();
+        scanf("%s",opcion);
+        //scanf("%c", &opcion);
 
         if ((numUsuarios + 1) >= MaxUsers)
         {
             printf("Max User Alcanzado\n");
-            opcion = '2';
+            opcion[0]= '2';
         }
 
-        if (opcion == '1')
+        else if (opcion[0] == '1')
         {
             Usuario_t u;
             int val;
@@ -38,18 +36,18 @@ int main()
             printf("\nIngrese Contrasenia: ");
             scanf("%s", u.password);
             val = validar(&u);
-            
+
             /* Detectar error */
             switch (val)
             {
             case 3:
-                fprintf(stderr, "**Password no size**\n");
+                fprintf(stderr, "\n**Password no size**\n");
                 break;
             case 4:
-                fprintf(stderr, "**Letra no in password**\n");
+                fprintf(stderr, "\n**Letra no in password**\n");
                 break;
             case 5:
-                fprintf(stderr, "**Number no in password**\n");
+                fprintf(stderr, "\n**Number no in password**\n");
                 break;
             case 0:
                 fprintf(stderr, "\n**Correcto**\n");
@@ -61,9 +59,18 @@ int main()
                 break;
             }
         }
-    } while (opcion != '2');
+
+    } while (opcion[0] != '2');
     printf("Exit\n");
     guardar(us, numUsuarios);
 
     return 0;
+}
+
+void mensaje()
+{
+    printf("\n------------------------------------------------\n");
+    printf("\n   1. Desea agregar un usuario:");
+    printf("\n   2. Salir.");
+    printf("\n\n   Introduzca opcion (1-2): ");
 }

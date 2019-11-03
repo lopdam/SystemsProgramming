@@ -18,5 +18,4 @@ go : $(bin)
 .PHONY : clean
 clean : 
 	@rm *.o
-	@rm usuario.txt
 	@rm $(bin)

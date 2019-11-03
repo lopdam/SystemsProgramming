@@ -2,7 +2,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
-#include "validar.h"
+#include <validar.h>
 
 int validar(Usuario_t *u)
 {

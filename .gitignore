@@ -53,3 +53,4 @@ dkms.conf
 
 #Text editor
 .vscode
+sonar-project.properties
