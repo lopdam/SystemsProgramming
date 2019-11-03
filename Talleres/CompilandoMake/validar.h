@@ -1,7 +1,6 @@
 
 #define MAXSTR 50
 
-
 typedef struct Usuario
 {
     char nombre[MAXSTR];
@@ -10,5 +9,4 @@ typedef struct Usuario
     char password[MAXSTR];
     int userid;
 } Usuario_t;
-
 int validar(Usuario_t *u);

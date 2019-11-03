@@ -1,20 +1,9 @@
 #include "validar.h"
 #include <ctype.h>
 #include <string.h>
-#include <stdio.h>
-#include<time.h>
+#include <time.h>
 #include <stdlib.h>
 
-/* Validar
-password debe de tener mínimo 1 letra, mínimo un digito y mínimo 10 caracteres en total
-
-La función validar() debe de retornar:
-0 si no hubo ningún error
-3 si password < 10
-4 si password no contiene letras
-5 si password no contiene dígitos
-
-*/
 int validar(Usuario_t *u)
 {
   u->nombre[0] = toupper(u->nombre[0]);
@@ -53,11 +42,11 @@ int validar(Usuario_t *u)
   {
     if (u->password[i] >= 48 && u->password[i] <= 57)
     {
-      letras = 0;
+      number = 0;
     }
     if ((u->password[i] >= 65 && u->password[i] <= 90) || (u->password[i] >= 97 && u->password[i] <= 122))
     {
-      number = 0;
+      letras = 0;
     }
   }
 
@@ -69,11 +58,5 @@ int validar(Usuario_t *u)
   {
     return 5;
   }
-
-  printf("\nName: %s\n", u->nombre);
-  printf("LastName: %s\n", u->apellido);
-  printf("UserName: %s\n", u->username);
-  printf("PassWord: %s\n", u->password);
-  printf("IdUser: %d\n", u->userid);
   return 0;
 }

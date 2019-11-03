@@ -1,22 +1,23 @@
 cc= gcc
 flag= -Wall
+header= guardar.h validar.h
+source= main.c validar.c guardar.c $(header)
 
-source= main.c validar.c guardar.c
-
-obj= main.o validar.o guardar.o 
+obj= main.o guardar.o validar.o 
 
 bin= CompilandoMake.out
 
 $(bin) : $(obj)
 	@$(cc) $(flag) -o $@ $?
 
-%.o : %.c 
-	@$(cc) $(flag) -c $<
+%.o : %.c $(header)
+	@$(cc) $(flag) -c $< -I.
 
-x : $(bin)
+go : $(bin)
 	@./$<
 	
 .PHONY : clean
 clean : 
-	@rm *.o 
+	@rm *.o
+	@rm usuario.txt
 	@rm $(bin)
