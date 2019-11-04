@@ -4,7 +4,7 @@ header= validar.h guardar.h
 
 obj= validar.o guardar.o main.o
 
-bin= CompilandoMake.out
+bin= usuarios
 
 $(bin) : $(obj)
 	@$(cc) $(flag) -o $@ $?
