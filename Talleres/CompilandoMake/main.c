@@ -14,11 +14,10 @@ int main()
     {
         mensaje();
         scanf("%s",opcion);
-        //scanf("%c", &opcion);
-
+  
         if ((numUsuarios + 1) >= MaxUsers)
         {
-            printf("Max User Alcanzado\n");
+            fprintf(stderr,"\n**Max Users Alcanzado**\n");
             opcion[0]= '2';
         }
 
