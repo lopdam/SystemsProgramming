@@ -1,0 +1,52 @@
+Instalar a partir del código fuente un software que implementa un servidor web ligero y eficiente, ideal para sistemas embebidos: 
+Lighttpd (Enlaces a un sitio externo.)Enlaces a un sitio externo..
+
+Para descargarse la última versión del código fuente de Lighttpd (hasta ahora la 1.4.54) clonar directamente el repositorio oficial:
+
+git clone https://git.lighttpd.net/lighttpd/lighttpd1.4.git (Enlaces a un sitio externo.)Enlaces a un sitio externo.
+cd lighttpd1.4
+
+Para compilar el código fuente es necesario primero verificar que todas las dependencias (librerías dinámicas)
+estén en el sistema y generar los archivos Makefile respectivos:
+
+	Ejecutar el siguiente comando (puede ser necesario instalar antes autoconf): ./autogen.sh
+
+Luego para generar el Makefile y compilar (puede ser necesario instalar libbz2-dev):
+
+./configure
+make
+
+Para instalar, es necesario usar privilegios de root:
+
+sudo make install
+
+Configurar lighttpd para que automáticamente sirva y escuche en el puerto TCP 8080 el contenido del archivo inicio.html.
+Este archivo debe contener una lista de los miembros del grupo. Por ejemplo, al escribir en el navegador:
+
+http://127.0.0.1:8080/
+
+Debe aparecer el contenido del archivo inicio.html. Depurar usando lsof -i para comprobar que el proceso lighttpd esté corriendo 
+y escuchando en el puerto 8080.  Basarse en: Tutorial Lighttpd (Enlaces a un sitio externo.)Enlaces a un sitio externo.
+
+Usar ifconfig para determinar su dirección IP
+Revisar que el puerto 8080 este desbloqueado con sudo ufw status verbose (ver aquí más información sobre el firewall en Ubuntu 
+(Enlaces a un sitio externo.)Enlaces a un sitio externo..)
+ 
+
+Entregable
+
+Reporte en PDF con la siguiente información:
+
+Integrantes del grupo
+
+¿Cómo se configuró el servidor? Mostrar el contenido del archivo de configuración lighttpd.conf
+
+Evidencias de funcionamiento, capturas de pantallas de los siguiente:
+
+Salida de lsof -i en donde se muestra el proceso escuchando en el puerto 8080
+
+Captura de pantalla del navegador en donde se muestra la página inicio.html 
+y la dirección local 127.0.0.1
+
+Usando el navegador, conectarse a la máquina de otro grupo (preguntarles por su IP) y mostrar el inicio.html 
+de ese grupo en su navegador. Debe visualizarse la IP en la barra de dirección del navegador.
